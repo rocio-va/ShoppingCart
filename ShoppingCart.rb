@@ -17,6 +17,9 @@ class ShoppingCart
 			else
 				total_cost += item.price
 			end
+		end
+		if (@items.length > 5)
+			total_cost -= total_cost * (10 / 100)		
 		end		
 		total_cost
 	end	
@@ -34,7 +37,7 @@ end
 
 class Fruit < Item
 	def price (day)
-		if (day == "sat" && day == "sun")
+		if (day == "sat")
 			@price - @price * (10 / 100)
 		else
 			@price	
